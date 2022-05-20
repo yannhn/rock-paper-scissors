@@ -1,8 +1,12 @@
+// Starting score
 let playerScore = 0;
 let computerScore = 0;
 
+//overall game function
 function game() {
+  // loops trough five rounds of the game
   for (let i = 0; i < 5; i++) {
+    // function defining the command of the computer
     function computerPlay() {
       let choices = ["rock", "paper", "scissors"];
       let randomChoices = choices[Math.floor(Math.random() * choices.length)];
@@ -11,6 +15,7 @@ function game() {
 
     let computerSelection = computerPlay();
 
+    // function defining the command of the player
     function playerPlay() {
       playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
       return playerSelection;
@@ -18,64 +23,69 @@ function game() {
 
     playerSelection = playerPlay();
 
+    // defining what happens every round
     function playRound(playerSelection, computerSelection) {
       playerSelection = playerSelection.toLowerCase();
       if (playerSelection === "rock" && computerSelection === "paper") {
         playerScore++;
         console.log(
-          `computer: ${computerSelection} player: ${playerSelection}
-          Your score is ${playerScore} and the computer's score is ${computerScore}`
+          `You Lose! Paper beats Rock
+          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
+          Player score: ${playerScore} Computer score: ${computerScore}`
         );
-        return "You Lose! Paper beats Rock";
       } else if (
         playerSelection === "paper" &&
         computerSelection === "scissors"
       ) {
         playerScore++;
         console.log(
-          `computer: ${computerSelection} player: ${playerSelection}
-          Your score is ${playerScore} and the computer's score is ${computerScore}`
+          `You Lose! Scissors beats Paper
+          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
+            Player score: ${playerScore} Computer score: ${computerScore}`
         );
-        return "You Lose! Scissors beats Paper";
       } else if (
         playerSelection === "scissors" &&
         computerSelection === "rock"
       ) {
         playerScore++;
         console.log(
-          `computer: ${computerSelection} player: ${playerSelection}
-          Your score is ${playerScore} and the computer's score is ${computerScore}`
+          `You Lose! Rock beats Scissors
+          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
+          Player score: ${playerScore} Computer score: ${computerScore}`
         );
-        return "You Lose! Rock beats Scissors";
       } else if (
         playerSelection === "rock" &&
         computerSelection === "scissors"
       ) {
         computerScore++;
         console.log(
-          `computer: ${computerSelection} player: ${playerSelection}
-          Your score is ${playerScore} and the computer's score is ${computerScore}`
+          `You Win! Rock beats Scissors
+          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
+          Player score: ${playerScore} Computer score: ${computerScore}`
         );
-        return "You Win! Rock beats Scissors";
       } else if (
         playerSelection === "scissors" &&
         computerSelection === "paper"
       ) {
         computerScore++;
         console.log(
-          `computer: ${computerSelection} player: ${playerSelection}
-          Your score is ${playerScore} and the computer's score is ${computerScore}`
+          `You Win! Scissors beats Paper
+          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
+          Player score: ${playerScore} Computer score: ${computerScore}`
         );
-        return "You Win! Scissors beats Paper";
       } else if (playerSelection === "paper" && computerSelection === "rock") {
         computerScore++;
         console.log(
-          `computer: ${computerSelection} player: ${playerSelection}
-          Your score is ${playerScore} and the computer's score is ${computerScore}`
+          `You Win! Paper beats Rock 
+          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
+          Player score: ${playerScore} Computer score: ${computerScore}`
         );
-        return "You Win! Paper beats Rock";
       } else {
-        return "Draw!";
+        console.log(
+          `Draw!
+        Player chose: ${playerSelection} Computer chose: ${computerSelection} 
+        Player score: ${playerScore} Computer score: ${computerScore}`
+        );
       }
     }
 

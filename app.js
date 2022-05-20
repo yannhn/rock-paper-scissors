@@ -88,9 +88,10 @@ function game() {
         );
       }
     }
-
+    //call function
     playRound(playerSelection, computerSelection);
   }
 }
 
+//call game function
 game();

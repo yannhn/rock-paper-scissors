@@ -1,5 +1,4 @@
 // Score
-
 const actualPlayerScore = document.querySelector(".number_playerScore");
 const actualComputerScore = document.querySelector(".number_computerScore");
 
@@ -14,8 +13,29 @@ function updateComputerScore() {
   actualComputerScore.textContent = computerScore;
 }
 
-// EventListeners
+// End of Game
+function endGame() {
+  if (computerScore === 5 || playerScore === 5) {
+    if (playerScore > computerScore) {
+      alert(
+        `You won! The computer scored: ${computerScore} You scored: ${playerScore}. Congratulations!`
+      );
+      resetScore();
+    } else {
+      alert(
+        `You lost! The computer scored:: ${computerScore} You scored: ${playerScore}.`
+      );
+      resetScore();
+    }
+  }
+}
 
+function resetScore() {
+  playerScore = 0;
+  computerScore = 0;
+}
+
+// EventListeners
 // Rock
 const btn_rock = document.querySelector(".btn_rock");
 btn_rock.addEventListener("click", () => {
@@ -59,51 +79,17 @@ let computerSelection = computerPlay();
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "paper") {
     computerScore++;
-    console.log(
-      `You Lose! Paper beats Rock
-          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
-          Player score: ${playerScore} Computer score: ${computerScore}`
-    );
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
     computerScore++;
-    console.log(
-      `You Lose! Scissors beats Paper
-          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
-            Player score: ${playerScore} Computer score: ${computerScore}`
-    );
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
     computerScore++;
-    console.log(
-      `You Lose! Rock beats Scissors
-          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
-          Player score: ${playerScore} Computer score: ${computerScore}`
-    );
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++;
-    console.log(
-      `You Win! Rock beats Scissors
-          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
-          Player score: ${playerScore} Computer score: ${computerScore}`
-    );
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
-    console.log(
-      `You Win! Scissors beats Paper
-          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
-          Player score: ${playerScore} Computer score: ${computerScore}`
-    );
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++;
-    console.log(
-      `You Win! Paper beats Rock 
-          Player chose: ${playerSelection} Computer chose: ${computerSelection} 
-          Player score: ${playerScore} Computer score: ${computerScore}`
-    );
   } else {
-    console.log(
-      `Draw!
-        Player chose: ${playerSelection} Computer chose: ${computerSelection} 
-        Player score: ${playerScore} Computer score: ${computerScore}`
-    );
   }
+  endGame();
 }

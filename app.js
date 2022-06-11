@@ -27,7 +27,7 @@ function game() {
     function playRound(playerSelection, computerSelection) {
       playerSelection = playerSelection.toLowerCase();
       if (playerSelection === "rock" && computerSelection === "paper") {
-        playerScore++;
+        computerScore++;
         console.log(
           `You Lose! Paper beats Rock
           Player chose: ${playerSelection} Computer chose: ${computerSelection} 
@@ -37,7 +37,7 @@ function game() {
         playerSelection === "paper" &&
         computerSelection === "scissors"
       ) {
-        playerScore++;
+        computerScore++;
         console.log(
           `You Lose! Scissors beats Paper
           Player chose: ${playerSelection} Computer chose: ${computerSelection} 
@@ -47,7 +47,7 @@ function game() {
         playerSelection === "scissors" &&
         computerSelection === "rock"
       ) {
-        playerScore++;
+        computerScore++;
         console.log(
           `You Lose! Rock beats Scissors
           Player chose: ${playerSelection} Computer chose: ${computerSelection} 
@@ -57,7 +57,7 @@ function game() {
         playerSelection === "rock" &&
         computerSelection === "scissors"
       ) {
-        computerScore++;
+        playerScore++;
         console.log(
           `You Win! Rock beats Scissors
           Player chose: ${playerSelection} Computer chose: ${computerSelection} 
@@ -67,14 +67,14 @@ function game() {
         playerSelection === "scissors" &&
         computerSelection === "paper"
       ) {
-        computerScore++;
+        playerScore++;
         console.log(
           `You Win! Scissors beats Paper
           Player chose: ${playerSelection} Computer chose: ${computerSelection} 
           Player score: ${playerScore} Computer score: ${computerScore}`
         );
       } else if (playerSelection === "paper" && computerSelection === "rock") {
-        computerScore++;
+        playerScore++;
         console.log(
           `You Win! Paper beats Rock 
           Player chose: ${playerSelection} Computer chose: ${computerSelection} 

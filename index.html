@@ -21,29 +21,48 @@
     ></script>
   </head>
   <body>
-    <section class="rps_title">
-      Rock, Paper or Scissors?
-      <section>
-        <button type="button" class="btn btn-primary" data-js="btn_rock">
-          Rock
-        </button>
-        <button type="button" class="btn btn-primary" data-js="btn_paper">
-          Paper
-        </button>
-        <button type="button" class="btn btn-primary" data-js="btn_scissors">
-          Scissors
-        </button>
+
+    <head>
+      <section  class="text-bg-primary p-5">
+        <h1 class="text-center">Rock, Paper or Scissors?</h1>
       </section>
-      <section>
-        Counter
-        <section>
-          PlayerScore
-          <p class="number_playerScore" data-js="number_playerScore">0</p>
+    </head>
+    <section class="text-bg-light p-3">  
+      <h2 class="text-center">Choose</h2>
+    </section>
+
+    <section class="d-flex justify-content-center btn-group-lg p-4">
+      <button type="button" class="btn btn-outline-dark m-3" data-js="btn_rock">
+        Rock
+      </button>
+      <button type="button" class="btn btn-outline-dark m-3" data-js="btn_paper">
+        Paper
+      </button>
+      <button type="button" class="btn btn-outline-dark m-3" data-js="btn_scissors">
+        Scissors
+      </button>
+      <button type="button" class="btn btn-danger m-3" data-js="btn_reset">
+        Start over
+      </button>
+    </section>
+
+    <section>
+      <section class="container">
+        <h3>Score</h3>
+    </section>
+        <section class="row m-4">
+          <p class="col">Player Score:</p>
+          <p class="col-5" data-js="number_playerScore">0</p>
         </section>
-        <section>
-          ComputerScore
-          <p class="number_computerScore" data-js="number_computerScore">0</p>
-        </section>
+      </section>
+
+      <section class="row m-4">
+        <p class="col">Computer Score:</p>
+        <p class="col-5" data-js="number_computerScore">0</p>
+      </section>
+      <section class="row m-4">
+        <p class="col">Draw:</p>
+        <p class="col-5" data-js="number_drawScore">0</p>
       </section>
     </section>
   </body>

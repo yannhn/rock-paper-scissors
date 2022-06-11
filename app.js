@@ -5,9 +5,11 @@ const actualPlayerScore = document.querySelector(
 const actualComputerScore = document.querySelector(
   "[data-js='number_computerScore']"
 );
+const tieScore = document.querySelector("[data-js='number_drawScore']");
 
 let playerScore = 0;
 let computerScore = 0;
+let drawScore = 0;
 
 function updatePlayerScore() {
   actualPlayerScore.textContent = playerScore;
@@ -15,6 +17,10 @@ function updatePlayerScore() {
 
 function updateComputerScore() {
   actualComputerScore.textContent = computerScore;
+}
+
+function updateTieScore() {
+  tieScore.textContent = drawScore;
 }
 
 // End of Game
@@ -37,6 +43,7 @@ function endGame() {
 function resetScore() {
   playerScore = 0;
   computerScore = 0;
+  drawScore = 0;
 }
 
 // EventListeners
@@ -48,6 +55,7 @@ btn_rock.addEventListener("click", () => {
   playRound(playerSelection, computerSelection);
   updatePlayerScore();
   updateComputerScore();
+  updateTieScore();
 });
 
 // Paper
@@ -58,6 +66,7 @@ btn_paper.addEventListener("click", () => {
   playRound(playerSelection, computerSelection);
   updatePlayerScore();
   updateComputerScore();
+  updateTieScore();
 });
 
 // Scissors
@@ -68,6 +77,14 @@ btn_scissors.addEventListener("click", () => {
   playRound(playerSelection, computerSelection);
   updatePlayerScore();
   updateComputerScore();
+  updateTieScore();
+});
+
+// TODO: Fix reset button
+// Reset
+const btn_reset = document.querySelector("[data-js='btn_reset']");
+btn_reset.addEventListener("click", () => {
+  resetScore();
 });
 
 // function defining the command of the computer
@@ -94,6 +111,7 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++;
   } else {
+    drawScore++;
   }
   endGame();
 }

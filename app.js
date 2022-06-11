@@ -85,6 +85,9 @@ btn_scissors.addEventListener("click", () => {
 const btn_reset = document.querySelector("[data-js='btn_reset']");
 btn_reset.addEventListener("click", () => {
   resetScore();
+  updatePlayerScore();
+  updateComputerScore();
+  updateTieScore();
 });
 
 // function defining the command of the computer

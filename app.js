@@ -1,6 +1,10 @@
 // Score
-const actualPlayerScore = document.querySelector(".number_playerScore");
-const actualComputerScore = document.querySelector(".number_computerScore");
+const actualPlayerScore = document.querySelector(
+  "[data-js='number_playerScore']"
+);
+const actualComputerScore = document.querySelector(
+  "[data-js='number_computerScore']"
+);
 
 let playerScore = 0;
 let computerScore = 0;
@@ -37,7 +41,7 @@ function resetScore() {
 
 // EventListeners
 // Rock
-const btn_rock = document.querySelector(".btn_rock");
+const btn_rock = document.querySelector("[data-js='btn_rock']");
 btn_rock.addEventListener("click", () => {
   computerSelection = computerPlay();
   playerSelection = "rock";
@@ -47,7 +51,7 @@ btn_rock.addEventListener("click", () => {
 });
 
 // Paper
-const btn_paper = document.querySelector(".btn_paper");
+const btn_paper = document.querySelector("[data-js='btn_paper']");
 btn_paper.addEventListener("click", () => {
   computerSelection = computerPlay();
   playerSelection = "paper";
@@ -57,7 +61,7 @@ btn_paper.addEventListener("click", () => {
 });
 
 // Scissors
-const btn_scissors = document.querySelector(".btn_scissors");
+const btn_scissors = document.querySelector("[data-js='btn_scissors']");
 btn_scissors.addEventListener("click", () => {
   computerSelection = computerPlay();
   playerSelection = "scissors";

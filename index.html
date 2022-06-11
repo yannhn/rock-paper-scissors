@@ -6,25 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rock-paper-scissors</title>
     <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
     <script src="./app.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <section class="rps_title">
       Rock, Paper or Scissors?
       <section>
-        <button class="btn_rock">Rock</button>
-        <button class="btn_paper">Paper</button>
-        <button class="btn_scissors">Scissors</button>
+        <button type="button" class="btn btn-primary" data-js="btn_rock">
+          Rock
+        </button>
+        <button type="button" class="btn btn-primary" data-js="btn_paper">
+          Paper
+        </button>
+        <button type="button" class="btn btn-primary" data-js="btn_scissors">
+          Scissors
+        </button>
       </section>
       <section>
         Counter
         <section>
           PlayerScore
-          <p class="number_playerScore">0</p>
+          <p class="number_playerScore" data-js="number_playerScore">0</p>
         </section>
         <section>
           ComputerScore
-          <p class="number_computerScore">0</p>
+          <p class="number_computerScore" data-js="number_computerScore">0</p>
         </section>
       </section>
     </section>

@@ -1,12 +1,29 @@
-// Rock
+// Score
+
+const actualPlayerScore = document.querySelector(".number_playerScore");
+const actualComputerScore = document.querySelector(".number_computerScore");
+
 let playerScore = 0;
 let computerScore = 0;
 
+function updatePlayerScore() {
+  actualPlayerScore.textContent = playerScore;
+}
+
+function updateComputerScore() {
+  actualComputerScore.textContent = computerScore;
+}
+
+// EventListeners
+
+// Rock
 const btn_rock = document.querySelector(".btn_rock");
 btn_rock.addEventListener("click", () => {
   computerSelection = computerPlay();
   playerSelection = "rock";
   playRound(playerSelection, computerSelection);
+  updatePlayerScore();
+  updateComputerScore();
 });
 
 // Paper
@@ -15,6 +32,8 @@ btn_paper.addEventListener("click", () => {
   computerSelection = computerPlay();
   playerSelection = "paper";
   playRound(playerSelection, computerSelection);
+  updatePlayerScore();
+  updateComputerScore();
 });
 
 // Scissors
@@ -23,6 +42,8 @@ btn_scissors.addEventListener("click", () => {
   computerSelection = computerPlay();
   playerSelection = "scissors";
   playRound(playerSelection, computerSelection);
+  updatePlayerScore();
+  updateComputerScore();
 });
 
 // function defining the command of the computer
@@ -86,15 +107,3 @@ function playRound(playerSelection, computerSelection) {
     );
   }
 }
-//call function
-// playRound("rock", computerSelection);
-
-//function defining the command of the player
-// function playerPlay() {
-//   playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-//   return playerSelection;
-// }
-
-// playerSelection = playerPlay();
-
-// Starting score

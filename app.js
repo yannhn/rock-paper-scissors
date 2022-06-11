@@ -1,24 +1,29 @@
 // Rock
+let playerScore = 0;
+let computerScore = 0;
+
 const btn_rock = document.querySelector(".btn_rock");
 btn_rock.addEventListener("click", () => {
-  playRound("rock", computerSelection);
+  computerSelection = computerPlay();
+  playerSelection = "rock";
+  playRound(playerSelection, computerSelection);
 });
 
 // Paper
 const btn_paper = document.querySelector(".btn_paper");
 btn_paper.addEventListener("click", () => {
-  playRound("paper", computerSelection);
+  computerSelection = computerPlay();
+  playerSelection = "paper";
+  playRound(playerSelection, computerSelection);
 });
 
 // Scissors
 const btn_scissors = document.querySelector(".btn_scissors");
 btn_scissors.addEventListener("click", () => {
-  playRound("scissors", computerSelection);
+  computerSelection = computerPlay();
+  playerSelection = "scissors";
+  playRound(playerSelection, computerSelection);
 });
-
-// Starting score
-let playerScore = 0;
-let computerScore = 0;
 
 // function defining the command of the computer
 function computerPlay() {
@@ -28,14 +33,6 @@ function computerPlay() {
 }
 
 let computerSelection = computerPlay();
-
-//function defining the command of the player
-// function playerPlay() {
-//   playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-//   return playerSelection;
-// }
-
-// playerSelection = playerPlay();
 
 // defining what happens every round
 function playRound(playerSelection, computerSelection) {
@@ -90,4 +87,14 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 //call function
-// playRound(playerSelection, computerSelection);
+// playRound("rock", computerSelection);
+
+//function defining the command of the player
+// function playerPlay() {
+//   playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+//   return playerSelection;
+// }
+
+// playerSelection = playerPlay();
+
+// Starting score

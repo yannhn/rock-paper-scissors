@@ -32,12 +32,12 @@ function endGame() {
   if (computerScore === 5 || playerScore === 5) {
     if (playerScore > computerScore) {
       alert(
-        `You won! The computer scored: ${computerScore} You scored: ${playerScore}. Congratulations!`
+        `You win! The computer scored: ${computerScore} You scored: ${playerScore}. Congratulations!`
       );
       resetScore();
     } else {
       alert(
-        `You lost! The computer scored:: ${computerScore} You scored: ${playerScore}.`
+        `You loose! The computer scored: ${computerScore} You scored: ${playerScore}.`
       );
       resetScore();
     }

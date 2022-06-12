@@ -7,9 +7,16 @@ const actualComputerScore = document.querySelector(
 );
 const tieScore = document.querySelector("[data-js='number_drawScore']");
 
+const showTurn = document.querySelector("[data-js='showTurn']");
+
+const showResult = document.querySelector("[data-js='showResult']");
+
+const showRound = document.querySelector("[data-js='showRound']");
+
 let playerScore = 0;
 let computerScore = 0;
 let drawScore = 0;
+let round = 0;
 
 function updatePlayerScore() {
   actualPlayerScore.textContent = playerScore;
@@ -44,6 +51,10 @@ function resetScore() {
   playerScore = 0;
   computerScore = 0;
   drawScore = 0;
+  round = 0;
+  showTurn.textContent = "Turn";
+  showResult.textContent = `Result`;
+  showRound.textContent = "Round";
 }
 
 // EventListeners
@@ -80,7 +91,6 @@ btn_scissors.addEventListener("click", () => {
   updateTieScore();
 });
 
-// TODO: Fix reset button
 // Reset
 const btn_reset = document.querySelector("[data-js='btn_reset']");
 btn_reset.addEventListener("click", () => {
@@ -88,6 +98,9 @@ btn_reset.addEventListener("click", () => {
   updatePlayerScore();
   updateComputerScore();
   updateTieScore();
+  showTurn.textContent = "Turn";
+  showResult.textContent = "Result";
+  showRound.textContent = "Round";
 });
 
 // function defining the command of the computer
@@ -103,18 +116,46 @@ let computerSelection = computerPlay();
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "paper") {
     computerScore++;
+    round++;
+    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
+    showResult.textContent = `You loose! ${computerSelection} beats ${playerSelection}`;
+    showRound.textContent = `Round: ${round}`;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
     computerScore++;
+    round++;
+    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
+    showResult.textContent = `You loose! ${computerSelection} beats ${playerSelection}`;
+    showRound.textContent = `Round: ${round}`;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
     computerScore++;
+    round++;
+    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
+    showResult.textContent = `You loose! ${computerSelection} beats ${playerSelection}`;
+    showRound.textContent = `Round: ${round}`;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++;
+    round++;
+    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
+    showResult.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+    showRound.textContent = `Round: ${round}`;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
+    round++;
+    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
+    showResult.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+    showRound.textContent = `Round: ${round}`;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++;
+    round++;
+    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
+    showResult.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+    showRound.textContent = `Round: ${round}`;
   } else {
     drawScore++;
+    round++;
+    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
+    showResult.textContent = `Draw!`;
+    showRound.textContent = `Round: ${round}`;
   }
   endGame();
 }

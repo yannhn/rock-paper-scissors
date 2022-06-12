@@ -6,11 +6,8 @@ const actualComputerScore = document.querySelector(
   "[data-js='number_computerScore']"
 );
 const tieScore = document.querySelector("[data-js='number_drawScore']");
-
 const showTurn = document.querySelector("[data-js='showTurn']");
-
 const showResult = document.querySelector("[data-js='showResult']");
-
 const showRound = document.querySelector("[data-js='showRound']");
 
 let playerScore = 0;
@@ -114,46 +111,51 @@ let computerSelection = computerPlay();
 
 // defining what happens every round
 function playRound(playerSelection, computerSelection) {
+  let playerSelect =
+    playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+  let computerSelect =
+    computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
+
   if (playerSelection === "rock" && computerSelection === "paper") {
     computerScore++;
     round++;
-    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
-    showResult.textContent = `You loose! ${computerSelection} beats ${playerSelection}`;
+    showTurn.textContent = `You: ${playerSelect} | Computer: ${computerSelect}`;
+    showResult.textContent = `You loose! ${computerSelect} beats ${playerSelect}`;
     showRound.textContent = `Round: ${round}`;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
     computerScore++;
     round++;
-    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
-    showResult.textContent = `You loose! ${computerSelection} beats ${playerSelection}`;
+    showTurn.textContent = `You: ${playerSelect} | Computer: ${computerSelect}`;
+    showResult.textContent = `You loose! ${computerSelect} beats ${playerSelect}`;
     showRound.textContent = `Round: ${round}`;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
     computerScore++;
     round++;
-    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
-    showResult.textContent = `You loose! ${computerSelection} beats ${playerSelection}`;
+    showTurn.textContent = `You: ${playerSelect} | Computer: ${computerSelect}`;
+    showResult.textContent = `You loose! ${computerSelect} beats ${playerSelect}`;
     showRound.textContent = `Round: ${round}`;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++;
     round++;
-    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
-    showResult.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+    showTurn.textContent = `You: ${playerSelect} | Computer: ${computerSelect}`;
+    showResult.textContent = `You win! ${playerSelect} beats ${computerSelect}`;
     showRound.textContent = `Round: ${round}`;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
     round++;
-    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
-    showResult.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+    showTurn.textContent = `You: ${playerSelect} | Computer: ${computerSelect}`;
+    showResult.textContent = `You win! ${playerSelect} beats ${computerSelect}`;
     showRound.textContent = `Round: ${round}`;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++;
     round++;
-    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
-    showResult.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+    showTurn.textContent = `You: ${playerSelect} | Computer: ${computerSelect}`;
+    showResult.textContent = `You win! ${playerSelect} beats ${computerSelect}`;
     showRound.textContent = `Round: ${round}`;
   } else {
     drawScore++;
     round++;
-    showTurn.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
+    showTurn.textContent = `You: ${playerSelect} | Computer: ${computerSelect}`;
     showResult.textContent = `Draw!`;
     showRound.textContent = `Round: ${round}`;
   }

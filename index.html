@@ -24,7 +24,7 @@
 
     <head>
       <section  class="text-bg-dark p-5">
-        <h1 class="text-center">Rock, Paper or Scissors?</h1>
+        <h1 class="text-center display-5">Rock, Paper or Scissors?</h1>
       </section>
     </head>
     <!-- <section class="text-bg-light p-3">  
@@ -32,25 +32,27 @@
  
     </section> -->
 
-    <section class="d-flex justify-content-center btn-group-lg p-4">
-      <button type="button" class="btn btn-outline-dark m-3" data-js="btn_rock">
+    <section class="d-flex justify-content-center p-4">
+      <button type="button" class="btn btn-outline-dark m-3 btn-lg" data-js="btn_rock">
         Rock
       </button>
-      <button type="button" class="btn btn-outline-dark m-3" data-js="btn_paper">
+      <button type="button" class="btn btn-outline-dark m-3 btn-lg" data-js="btn_paper">
         Paper
       </button>
-      <button type="button" class="btn btn-outline-dark m-3" data-js="btn_scissors">
+      <button type="button" class="btn btn-outline-dark m-3 btn-lg" data-js="btn_scissors">
         Scissors
       </button>
-      <button type="button" class="btn btn-danger m-3" data-js="btn_reset">
+      <button type="button" class="btn btn-danger m-3 btn-lg" data-js="btn_reset">
         Start over
       </button>
     </section>
 
-    <section>
-      <h4 class="text-center" data-js="showRound"></h4>
-      <h4 class="text-center" data-js="showTurn"></h4>
-      <h4 class="text-center" data-js="showResult"></h4>
+    <section class="container">
+      <section class="row m-4 align-items-start text-center border-bottom border-dark">
+      <h4 class="col text-muted" data-js="showRound">Round</h4>
+      <h4 class="col" data-js="showTurn">Turn</h4>
+      <h4 class="col" data-js="showResult">Result</h4>
+    </section>
     </section>
 
     <section>
@@ -60,18 +62,18 @@
     </section>
 
         <section class="row m-4">
-          <p class="col">Player Score:</p>
-          <p class="col-2" data-js="number_playerScore">0</p>
+          <p class="col lead">Player Score:</p>
+          <p class="col-2 lead" data-js="number_playerScore">0</p>
         </section>
       </section>
 
       <section class="row m-4">
-        <p class="col">Computer Score:</p>
-        <p class="col-2" data-js="number_computerScore">0</p>
+        <p class="col lead">Computer Score:</p>
+        <p class="col-2 lead" data-js="number_computerScore">0</p>
       </section>
       <section class="row m-4">
-        <p class="col">Draw:</p>
-        <p class="col-2" data-js="number_drawScore">0</p>
+        <p class="col lead">Draw:</p>
+        <p class="col-2 lead" data-js="number_drawScore">0</p>
       </section>
     </section>
   </section>
